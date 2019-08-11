@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+section + section {
+	@apply mt-16;
+}
+h6 {
+	@apply text-sm block mb-0 font-bold opacity-50;
+}
+
+/* Light theme */
+.light-true {
+	@apply bg-black;
+}
+
+.light-false {
+	@apply bg-white;
+}
+
+.App {
+	@apply overflow-hidden flex flex-col;
+	height: 100vh;
+}
+
+.Header {
+	@apply flex flex-col py-10 px-5 w-64 border-gray-300 border-solid border-r;
+}
+
+/* Menu */
+.Menu {
+	@apply flex flex-col flex-1;
+}
+	.Menu__item {
+		@apply text-xl leading-loose rounded-full py-2 px-5;
+		transition: all .15s;
+	}
+	.Menu__item + .Menu__item {
+		@apply mt-1;
+	}
+	.Menu__item--active,
+	.Menu__item:hover {
+		@apply bg-gray-200;
+	}
+
+
+/* Button */
+.Button {
+  @apply bg-pink-500 px-4 py-2 rounded text-white;
+}
+
+
+/* Swatch */
+.Swatch {
+	@apply rounded bg-white overflow-hidden shadow-lg;
+}
+	.Swatch__header {
+		@apply text-5xl p-10 m-0 flex items-center;
+	}
+	.Swatch__header small {
+		@apply text-5xl opacity-50;
+	}
+
+.Swatch__colors {
+	@apply p-10 leading-normal flex flex-col;
+}
+	.Swatch__colors span {
+		@apply flex-1;
+		filter: invert(1) grayscale(1) contrast(9);
+	}
+	.Swatch__colors span + span {
+		@apply mt-5;
+	}
+
+
+@keyframes copyAnimation {
+	0% { opacity: 0; transform: scale(0.9); }
+	50% { opacity: 1; transform: scale(1); }
+	100% { opacity: 0; transform: scale(1.1); }
+} 
+
+
+/* Color */
+.Color {
+	@apply flex-1 inline-flex p-5 text-sm text-white uppercase relative overflow-hidden;
+}
+	.Color small {
+		@apply text-sm opacity-50;
+	}
+	.Color:hover::after {
+		animation: copyAnimation 0.5s ease-in;
+	}
+
+/* Sidebar */
+.Sidebar {
+	@apply flex bg-white overflow-auto p-2 border-b border-gray-300;
+	height: 20vh;
+}
+	.Sidebar__coloritem {
+		@apply rounded block p-4;
+		cursor: pointer;
+	}
+	.Sidebar__coloritem + .Sidebar__coloritem {
+		@apply ml-1;
+		transition: all .2s;
+	}
+	.Sidebar__coloritem:hover {
+		transform: scale(0.95);
+	}
+	.Sidebar__colorname {
+		@apply text-white block p-3 text-sm;
+	}
+	.Sidebar__colorname small {
+		@apply text-sm opacity-50;
+	}
+
+
+/* Sample */
+.Sample {
+	@apply bg-white shadow-lg rounded flex-col;
+}
+	.Sample div {
+		@apply p-10;
+	}
+	.Sample h3 {
+		@apply text-4xl mb-10 leading-normal;
+	}
+	.Sample p {
+		@apply text-lg leading-loose flex-1;
+	}
+
+
+/* Color */
+/* .Color {
+	@apply block h-10 relative flex items-center;
+	cursor: pointer;
+}
+	.Color__name {
+		@apply text-xs p-1;
+		display: none;
+		filter: invert(1) grayscale(1) contrast(9);
+	}
+	.Color:hover .Color__name {
+		@apply opacity-100;
+	} */
+
+
+/* Palettes */
+.PaletteList {
+	@apply flex flex-col bg-transparent shadow-none;
+}
+
+.PaletteList + .PaletteList {
+	@apply mt-10;
+}
+
+
+/* Palette */
+.Palette {
+	@apply flex-1 flex flex-col;
+}
+	.Palette__header {
+		@apply mb-3;
+	}
+	.Palette__colors {
+		@apply flex flex-col rounded overflow-hidden bg-white shadow-lg;
+	}
+.Palette + .Palette {
+	@apply mt-10;
+}
+
+/* Main */
+.Main {
+	@apply flex-1 bg-gray-200 overflow-auto p-5;
+	height: 100vh;
+}
+
+
+/* Palette */
+.Pallet {
+	@apply flex;
+}
+	.Pallet .Color {
+		@apply flex-1 m-0 rounded-none h-10;
+	}
+
+@screen lg {
+	.App {
+		@apply flex-row;
+	}
+
+	.Sidebar {
+		@apply w-1/4 flex-col;
+		height: 100vh;
+	}
+	.Sidebar__coloritem + .Sidebar__coloritem {
+		@apply ml-0 mt-1;
+	}
+
+	.Swatch__colors {
+		@apply flex-row;
+	}
+
+	.Swatch__colors span + span {
+		@apply mt-0 ml-5;
+	}
+
+	.PaletteList {
+		@apply flex-row;
+	}
+	.Palette__colors {
+		@apply flex-row;
+	}
+	.Palette + .Palette {
+		@apply mt-0 ml-10;
+	}
+}
