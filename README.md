@@ -1,6 +1,6 @@
 # Color-Codes
 
-Color-Codes é um projeto para visualizar especificações, conversões e combinações da lista de cores HTML. O projeto está disponível em [http://israeljunior.github.io/color-codes](http://israeljunior.github.io/color-codes)
+Color-Codes é um projeto para visualizar especificações, conversões e combinações da lista de cores HTML.
 
 ## Instruções de uso
 1. Clone o repositório
